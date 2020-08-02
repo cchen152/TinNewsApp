@@ -1,15 +1,22 @@
 package com.laioffer.tinnews.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Objects;
 
+@Entity
 public class Article {
 
     public String author;
 
     public String title;
 
-    public String destination;
+    public String description;
 
+    @NonNull
+    @PrimaryKey
     public String url;
 
     public String urlToImage;
@@ -25,7 +32,7 @@ public class Article {
         Article article = (Article) o;
         return Objects.equals(author, article.author) &&
                 Objects.equals(title, article.title) &&
-                Objects.equals(destination, article.destination) &&
+                Objects.equals(description, article.description) &&
                 Objects.equals(url, article.url) &&
                 Objects.equals(urlToImage, article.urlToImage) &&
                 Objects.equals(publishedAt, article.publishedAt) &&
@@ -34,7 +41,7 @@ public class Article {
 
     @Override
     public int hashCode() {
-        return Objects.hash(author, title, destination, url, urlToImage, publishedAt, content);
+        return Objects.hash(author, title, description, url, urlToImage, publishedAt, content);
     }
 
     @Override
@@ -42,7 +49,7 @@ public class Article {
         return "Article{" +
                 "author='" + author + '\'' +
                 ", title='" + title + '\'' +
-                ", destination='" + destination + '\'' +
+                ", destination='" + description + '\'' +
                 ", url='" + url + '\'' +
                 ", urlToImage='" + urlToImage + '\'' +
                 ", publishedAt='" + publishedAt + '\'' +
