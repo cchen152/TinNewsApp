@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         navController = navHostFragment.getNavController();
 
         NavigationUI.setupWithNavController(navView, navController);
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        NewsApi api = RetrofitClient.newInstance(this).create(NewsApi.class);
     }
 
     @Override
